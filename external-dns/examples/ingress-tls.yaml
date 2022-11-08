@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: echo
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+      - echo.test.eoggian.tk
+    secretName: echo  
+  rules:
+  - host: echo.test.eoggian.tk
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: echo
+            port:
+              number: 80
