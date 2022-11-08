@@ -1,0 +1,5 @@
+---
+installCRDs: true
+extraArgs:
+  - --dns01-recursive-nameservers-only
+  - --dns01-recursive-nameservers=148.187.148.151:53
