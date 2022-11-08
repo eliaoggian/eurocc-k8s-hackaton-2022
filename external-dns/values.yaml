@@ -1,0 +1,12 @@
+sources:
+  - service
+  - ingress
+provider: "pdns"
+pdns:
+  apiUrl: "http://ns1.eoggian.tk"
+  secretName: pdns-eoggian
+policy: upsert-only # use upsert-only to avoid deletion
+domainFilters:
+  - "test.eoggian.tk"
+# logLevel: debug
+# interval: 5m
