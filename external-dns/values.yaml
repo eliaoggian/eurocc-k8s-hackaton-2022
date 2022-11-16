@@ -7,6 +7,6 @@ pdns:
   secretName: pdns-eoggian
 policy: upsert-only # use upsert-only to avoid deletion
 domainFilters:
-  - "test.eoggian.tk"
+  - "test2.eoggian.tk"
 # logLevel: debug
 # interval: 5m

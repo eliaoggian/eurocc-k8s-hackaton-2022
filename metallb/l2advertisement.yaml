@@ -1,7 +1,7 @@
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: advert-cluster01
+  name: advertisement
   namespace: metallb-system
 spec:
   ipAddressPools:

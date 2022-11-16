@@ -12,8 +12,8 @@ spec:
    # issuer created in step 1
    name: selfsigned-issuer
    kind: Issuer
- commonName: "cluster.eoggian.tk"
+ commonName: "test.eoggian.tk"
  dnsNames:
  # one or more fully-qualified domain name
  # can be defined here
- - cluster.eoggian.tk
+ - test.eoggian.tk
