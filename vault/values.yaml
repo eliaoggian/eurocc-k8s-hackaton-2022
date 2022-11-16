@@ -1,0 +1,12 @@
+
+server:
+  ingress:
+    ingressClassName: nginx
+    enabled: true
+    hosts:
+    - host: vault.test.eoggian.tk
+    tls:
+    - hosts:
+      - vault.test.eoggian.tk
+      secretName: vault-tls
+      

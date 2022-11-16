@@ -7,7 +7,7 @@ ingress:
     - registry.test.eoggian.tk
   tls:
   - hosts:
-    - echo.test.eoggian.tk
+    - registry.test.eoggian.tk
     secretName: docker-registry-tls
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 0
