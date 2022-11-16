@@ -1,0 +1,13 @@
+persistence:
+  enabled: true
+
+ingress:
+  enabled: true
+  hosts:
+    - registry.test.eoggian.tk
+  tls:
+  - hosts:
+    - echo.test.eoggian.tk
+    secretName: docker-registry-tls
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 0

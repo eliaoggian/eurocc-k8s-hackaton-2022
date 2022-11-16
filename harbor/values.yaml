@@ -1,0 +1,20 @@
+---
+
+adminPassword: changeme
+
+externalURL: https://harbor.test.eoggian.tk
+
+exposureType: ingress
+
+ingress:
+  core:
+    hostname: harbor.test.eoggian.tk
+    ingressClassName: nginx
+
+  notary:
+    hostname: notary.test.eoggian.tk
+    ingressClassName: nginx
+
+nginx:
+  tls:
+    existingSecret: harbor-tls

@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: docker-registry
+  namespace: docker-registry
+spec:
+  secretName: docker-registry-tls
+  commonName: registry.test.eoggian.tk
+  dnsNames:
+  - registry.test.eoggian.tk
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt
