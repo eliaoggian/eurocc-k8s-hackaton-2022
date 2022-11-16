@@ -1,0 +1,12 @@
+server:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+    - argocd.test.eoggian.tk
+    tls:
+    - hosts:
+      - argocd.test.eoggian.tk
+      secretName: argocd-tls
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
