@@ -5,4 +5,4 @@ metadata:
   namespace: metallb-system
 spec:
   ipAddressPools:
-  - pool-cluster01
+  - pool

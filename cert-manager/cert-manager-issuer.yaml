@@ -15,9 +15,9 @@ spec:
           groupName: acme.zacharyseguin.ca
           solverName: pdns
           config:
-            host: http://ns1.eoggian.tk:8081
+            host: http://ns1.hack2022.ch:8081
             apiKeySecretRef:
-              name: pdns-eoggian
+              name: pdns-secret
               key: pdns_api_key
               # Optional config, shown with default values
               #   all times in seconds

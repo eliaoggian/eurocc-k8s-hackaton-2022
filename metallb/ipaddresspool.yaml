@@ -1,8 +1,8 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: pool-cluster01
+  name: pool
   namespace: metallb-system
 spec:
   addresses:
-  - 148.187.82.206-148.187.82.210
+  - @@ADDRESS_POOL@@

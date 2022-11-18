@@ -6,10 +6,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      - echo.test.eoggian.tk
+      - echo.test.hack2022.ch
     secretName: echo  
   rules:
-  - host: echo.test.eoggian.tk
+  - host: echo.test.hack2022.ch
     http:
       paths:
       - pathType: Prefix

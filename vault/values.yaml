@@ -4,9 +4,9 @@ server:
     ingressClassName: nginx
     enabled: true
     hosts:
-    - host: vault.test.eoggian.tk
+    - host: vault.test.hack2022.ch
     tls:
     - hosts:
-      - vault.test.eoggian.tk
+      - vault.test.hack2022.ch
       secretName: vault-tls
       

@@ -14,7 +14,7 @@ if [ -z "$PDNS_API_KEY" ]; then
     exit 1
 fi
 
-kubectl -n cert-manager create secret generic pdns-eoggian --from-literal=pdns_api_key=$PDNS_API_KEY
+kubectl -n cert-manager create secret generic pdns-secret --from-literal=pdns_api_key=$PDNS_API_KEY
 
 kubectl apply -f selfsigned-issuer.yaml 
 kubectl apply -f ca-cert.yaml 

@@ -4,10 +4,10 @@ persistence:
 ingress:
   enabled: true
   hosts:
-    - registry.test.eoggian.tk
+    - registry.test.hack2022.ch
   tls:
   - hosts:
-    - registry.test.eoggian.tk
+    - registry.test.hack2022.ch
     secretName: docker-registry-tls
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 0

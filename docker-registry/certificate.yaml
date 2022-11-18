@@ -5,9 +5,9 @@ metadata:
   namespace: docker-registry
 spec:
   secretName: docker-registry-tls
-  commonName: registry.test.eoggian.tk
+  commonName: registry.test.hack2022.ch
   dnsNames:
-  - registry.test.eoggian.tk
+  - registry.test.hack2022.ch
   issuerRef:
     kind: ClusterIssuer
     name: letsencrypt
