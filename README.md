@@ -11,3 +11,5 @@ This repo contains some useful manifests and files (with examples) that can help
 * storage
 * vault
   
+## Usage
+Build the templates using the `prepare.sh` bash script. It will create a new directory `clusters` with the manifests containing the correct values for your cluster. 
