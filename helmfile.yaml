@@ -9,6 +9,11 @@ environments:
       - values.yaml
       - clusterName: loki
       - vipRange: 148.187.83.200-148.187.83.204
+  ronan:
+    values:
+      - values.yaml
+      - clusterName: ronan
+      - vipRange: 148.187.83.220-148.187.83.224
 
 
 repositories:
@@ -44,15 +49,17 @@ releases:
     wait: true
     condition: argo-cd.enabled
     values: 
-        - values-argocd.yaml.gotmpl
+      - values-argocd.yaml.gotmpl
 
   - name: argo-cd-templates
     namespace: argocd
     chart: ./charts/argocd
     wait: true
     condition: argo-cd.enabled
+    needs:
+    - cert-manager/cert-manager
     values: 
-        - charts/argocd/values.yaml.gotmpl
+      - charts/argocd/values.yaml.gotmpl
 
   - name: cert-manager
     namespace: cert-manager
@@ -61,7 +68,7 @@ releases:
     wait: true
     condition: cert-manager.enabled
     values: 
-        - values-cert-manager.yaml
+      - values-cert-manager.yaml
 
   - name: cert-manager-templates
     namespace: cert-manager
@@ -69,7 +76,7 @@ releases:
     wait: true
     condition: cert-manager.enabled
     values: 
-        - charts/cert-manager/values.yaml.gotmpl
+      - charts/cert-manager/values.yaml.gotmpl
 
   - name: cert-manager-webhook-pdns
     namespace: cert-manager
@@ -78,7 +85,7 @@ releases:
     wait: true
     condition: cert-manager.enabled
     values: 
-        - values-cert-manager.yaml
+      - values-cert-manager.yaml
 
   - name: docker-registry
     namespace: docker-registry
@@ -87,15 +94,17 @@ releases:
     wait: true
     condition: docker-registry.enabled
     values: 
-        - values-docker-registry.yaml.gotmpl
+      - values-docker-registry.yaml.gotmpl
 
   - name: docker-registry-templates
     namespace: docker-registry
     chart: ./charts/docker-registry
     wait: true
     condition: docker-registry.enabled
+    needs: 
+      - cert-manager/cert-manager
     values: 
-        - charts/docker-registry/values.yaml.gotmpl
+      - charts/docker-registry/values.yaml.gotmpl
 
   - name: external-dns
     namespace: external-dns
@@ -104,7 +113,7 @@ releases:
     wait: true
     condition: external-dns.enabled
     values: 
-        - values-external-dns.yaml.gotmpl
+      - values-external-dns.yaml.gotmpl
 
   - name: external-dns-templates
     namespace: external-dns
@@ -112,7 +121,7 @@ releases:
     wait: true
     condition: external-dns.enabled
     values: 
-        - charts/external-dns/values.yaml.gotmpl
+      - charts/external-dns/values.yaml.gotmpl
     
   - name: ingress-nginx
     namespace: ingress-nginx
@@ -120,8 +129,9 @@ releases:
     version: 4.4.0
     wait: true
     condition: ingress-nginx.enabled
+    needs: 
+      - metallb-system/metallb
 
-    
   - name: metallb
     namespace: metallb-system
     chart: metallb/metallb
@@ -135,7 +145,7 @@ releases:
     wait: true
     condition: metallb.enabled
     values: 
-        - charts/metallb/values.yaml.gotmpl
+      - charts/metallb/values.yaml.gotmpl
 
   - name: vault
     namespace: vault
@@ -144,13 +154,15 @@ releases:
     wait: true
     condition: vault.enabled
     values: 
-        - values-vault.yaml.gotmpl
+      - values-vault.yaml.gotmpl
 
   - name: vault-templates
     namespace: vault
     chart: ./charts/vault
     wait: true
     condition: vault.enabled
+    needs: 
+      - cert-manager/cert-manager
     values: 
-        - charts/vault/values.yaml.gotmpl
+      - charts/vault/values.yaml.gotmpl
 
