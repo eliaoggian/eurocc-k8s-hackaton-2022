@@ -1,0 +1,11 @@
+server:
+  ingress:
+    ingressClassName: nginx
+    enabled: true
+    hosts:
+    - host: vault.{{ .Values.clusterName }}.hack2022.ch
+    tls:
+    - hosts:
+      - vault.{{ .Values.clusterName }}.hack2022.ch
+      secretName: vault-tls
+      

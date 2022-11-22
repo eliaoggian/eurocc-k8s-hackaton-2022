@@ -1,0 +1,13 @@
+sources:
+  - service
+  - ingress
+provider: "pdns"
+pdns:
+  apiUrl: "https://hack2022.ch"
+  apiPort: 8443
+  secretName: pdns-secret
+policy: upsert-only
+domainFilters:
+  - {{ .Values.clusterName }}.hack2022.ch
+
+

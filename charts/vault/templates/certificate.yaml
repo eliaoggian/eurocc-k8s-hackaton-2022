@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vault
+spec:
+  secretName: vault-tls
+  commonName: vault.{{ .Values.clusterName }}.hack2022.ch
+  dnsNames:
+  - vault.{{ .Values.clusterName }}.hack2022.ch
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt

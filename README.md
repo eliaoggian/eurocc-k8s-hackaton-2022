@@ -10,6 +10,22 @@ This repo contains some useful manifests and files (with examples) that can help
 * metallb
 * storage
 * vault
-  
+
+## Requirements
+1. Install helmfile: https://github.com/helmfile/helmfile#installation
+
+
+2. Install helm-diff plugin: 
+   ```
+    helm plugin install https://github.com/databus23/helm-diff
+   ```
+
+
 ## Usage
-Build the templates using the `prepare.sh` bash script. It will create a new directory `clusters` with the manifests containing the correct values for your cluster. 
+
+1. Configure what do you want to deploy in the `values.yaml` file.
+2. Identify your cluster name (for example, `loki`)
+3. Deploy the charts setting the Power DNS API key (if needed):
+   ```
+    helmfile sync -e loki --set pdnsApiKey=mySuperSecretApiKey
+   ```

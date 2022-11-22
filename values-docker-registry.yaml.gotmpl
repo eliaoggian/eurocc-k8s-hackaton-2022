@@ -1,0 +1,16 @@
+persistence:
+  enabled: true
+
+updateStrategy: 
+  type: Recreate
+
+ingress:
+  enabled: true
+  hosts:
+    - registry.{{ .Values.clusterName }}.hack2022.ch
+  tls:
+  - hosts:
+    - registry.{{ .Values.clusterName }}.hack2022.ch
+    secretName: docker-registry-tls
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 0

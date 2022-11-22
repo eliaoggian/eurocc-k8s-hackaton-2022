@@ -1,0 +1,20 @@
+argo-cd:
+  enabled: true
+
+cert-manager:
+  enabled: true
+
+docker-registry:
+  enabled: true
+
+external-dns:
+  enabled: true
+
+ingress-nginx:
+  enabled: true
+
+metallb:
+  enabled: true
+
+vault:
+  enabled: true

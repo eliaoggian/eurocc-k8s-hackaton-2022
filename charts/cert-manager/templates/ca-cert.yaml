@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+ name: ca-cert
+ namespace: cert-manager
+spec:
+ # name of the tls secret to store
+ # the generated certificate/key pair
+ secretName: ca-key-pair
+ isCA: true
+ issuerRef:
+   # issuer created in step 1
+   name: selfsigned-issuer
+   kind: Issuer
+ commonName: {{ .Values.clusterName }}.hack2022.ch
+ dnsNames:
+ # one or more fully-qualified domain name
+ # can be defined here
+ - {{ .Values.clusterName }}.hack2022.ch

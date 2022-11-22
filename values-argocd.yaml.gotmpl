@@ -1,0 +1,13 @@
+enabled: true
+server:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+    - argocd.{{ .Values.clusterName }}.hack2022.ch
+    tls:
+    - hosts:
+      - argocd.{{ .Values.clusterName }}.hack2022.ch
+      secretName: argocd-tls
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
