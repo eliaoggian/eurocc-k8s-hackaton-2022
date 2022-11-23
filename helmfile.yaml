@@ -148,6 +148,8 @@ releases:
     chart: ./charts/metallb
     wait: true
     condition: metallb.enabled
+    needs: 
+      - metallb-system/metallb
     values: 
       - charts/metallb/values.yaml.gotmpl
 
