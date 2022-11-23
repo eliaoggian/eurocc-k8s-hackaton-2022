@@ -1,19 +1,25 @@
-argo-cd:
-  enabled: true
-
+### System components (Recommended)
 cert-manager:
-  enabled: true
-
-docker-registry:
   enabled: true
 
 external-dns:
   enabled: true
 
-ingress-nginx:
+# Required: metallb
+ingress-nginx: 
   enabled: true
 
 metallb:
+  enabled: true
+
+
+
+
+### Applications (ALL System components are required! See above)
+argo-cd:
+  enabled: true
+
+docker-registry:
   enabled: true
 
 vault:
