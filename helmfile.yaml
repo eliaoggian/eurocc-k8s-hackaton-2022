@@ -4,16 +4,51 @@ environments:
       - values.yaml
       - clusterName: oblivion
       - vipRange: 148.187.83.245-148.187.83.249
-  loki:
+  ultron:
     values:
       - values.yaml
-      - clusterName: loki
-      - vipRange: 148.187.83.200-148.187.83.204
+      - clusterName: ultron
+      - vipRange: 148.187.83.240-148.187.83.244
+  goblin:
+    values:
+      - values.yaml
+      - clusterName: goblin
+      - vipRange: 148.187.83.235-148.187.83.239
+  mandarin:
+    values:
+      - values.yaml
+      - clusterName: mandarin
+      - vipRange: 148.187.83.230-148.187.83.234
+  kingpin:
+    values:
+      - values.yaml
+      - clusterName: kingpin
+      - vipRange: 148.187.83.225-148.187.83.229
   ronan:
     values:
       - values.yaml
       - clusterName: ronan
       - vipRange: 148.187.83.220-148.187.83.224
+  hela:
+    values:
+      - values.yaml
+      - clusterName: hela
+      - vipRange: 148.187.83.215-148.187.83.219
+  thanos:
+    values:
+      - values.yaml
+      - clusterName: thanos
+      - vipRange: 148.187.83.210-148.187.83.214
+  doom:
+    values:
+      - values.yaml
+      - clusterName: doom
+      - vipRange: 148.187.83.205-148.187.83.209
+  loki:
+    values:
+      - values.yaml
+      - clusterName: loki
+      - vipRange: 148.187.83.200-148.187.83.204
 
 
 repositories:
