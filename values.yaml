@@ -17,10 +17,10 @@ metallb:
 
 ### Applications (ALL System components are required! See above)
 argo-cd:
-  enabled: true
+  enabled: false
 
 docker-registry:
   enabled: true
 
 vault:
-  enabled: true
+  enabled: false

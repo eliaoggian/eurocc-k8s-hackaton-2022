@@ -170,6 +170,8 @@ releases:
     condition: ingress-nginx.enabled
     needs: 
       - metallb-system/metallb
+    values:
+      - values-ingress-nginx.yaml
 
   - name: metallb
     namespace: metallb-system
